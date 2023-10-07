@@ -1,0 +1,31 @@
+<% layout('layouts/Boilerplate')%>
+<style>
+  .img-fluid {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+}
+</style>
+<h1 >Your Cart</h1>
+<div class="row">
+    <div class="col-6 ">
+        <div class="card mb-3">
+          <div class="embed-respnosive embed-respnosive-4by3">
+            <img src="<%= book.image %>" class="img-fluid" alt="Card image cap">
+          </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= book.title %> </h5>
+              <p class="card-text"><%= book.description %> </p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Author- <%= book.author %> </li>
+              <li class="list-group-item">Submitted by- <%= book.user.username %> </li>
+              <li class="list-group-item">Price- $<%= book.price %> </li>
+            </ul>
+            <div class="card-body">
+              <a href="/books/<%=book._id%>/buy" class="card-link"> <button class="btn btn-success">BUY</button> </a>
+            </div>
+          </div>
+          </div>
+          </div>
+
